@@ -4,7 +4,7 @@
 		private $server ="localhost";
 		private $username = "root";
 		private $password = "";
-		private $database = "sibangsat";
+		private $database = "tk4team1db";
 
 		function koneksidatabase()
 		{
