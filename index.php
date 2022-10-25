@@ -34,27 +34,6 @@ catch(\PDOException $ex){
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <script>
-window.onload = function () {
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	exportEnabled: true,
-	theme: "light1", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "PHP Column Chart from Database"
-	},
-	data: [{
-		type: "column", //change type to bar, line, area, pie, etc  
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
- 
-}
-</script>
-    <!-- baruditambah end -->
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -152,9 +131,6 @@ chart.render();
             </div>
 
         </div>
-
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <!-- Content End -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
