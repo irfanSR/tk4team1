@@ -3,7 +3,7 @@
 	{
 		private $server ="localhost";
 		private $username = "root";
-		private $password = "root";
+		private $password = "";
 		private $database = "sibangsat";
 
 		function koneksidatabase()
