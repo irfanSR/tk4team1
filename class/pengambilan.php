@@ -76,5 +76,17 @@
 
 			return $barangList;
 		}
-	}
+		
+		
+
+		function PengambilanCount ()
+		{
+			$query = "SELECT COUNT(p.id_pengambilan) totpengambilan FROM pengambilan p";
+			$prepareDB = $this->conn->prepare($query);
+			$prepareDB->execute();
+			$barangList = $prepareDB->fetchAll();
+
+			return $barangList;
+		
+	}}
 ?>

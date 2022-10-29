@@ -49,6 +49,16 @@
 
 			return $barangList;
 		}
+		function BarangCount ()
+		{
+			$query = "select COUNT(b.nama_barang) totbrg FROM barang b";
+			$prepareDB = $this->conn->prepare($query);
+			$prepareDB->execute();
+			$barangCount = $prepareDB->fetchAll();
+
+			return $barangCount;
+		}
+		
 		function FindBarangById ($id)
 		{
 			try {

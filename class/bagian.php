@@ -49,6 +49,16 @@
 
 			return $bagianList;
 		}
+		function BagianCount ()
+		{
+			$query = "select COUNT(b.nama_bagian) totbagian
+			FROM bagian b";
+			$prepareDB = $this->conn->prepare($query);
+			$prepareDB->execute();
+			$barangList = $prepareDB->fetchAll();
+
+			return $barangList;
+		}
 		function findBagianById ($id)
 		{
 			try {

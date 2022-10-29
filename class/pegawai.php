@@ -93,6 +93,16 @@
 
 			return $pegawaiList;
 		}
+
+		function PegawaiCount ()
+		{
+			$query = "select COUNT(p.username) totpegawai FROM pegawai p;";
+			$prepareDB = $this->conn->prepare($query);
+			$prepareDB->execute();
+			$barangCount = $prepareDB->fetchAll();
+
+			return $barangCount;
+		}
 		function findPegawaiById ($id)
 		{
 			try {

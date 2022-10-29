@@ -1,36 +1,3 @@
-<!-- script php start -->
-<?php
- 
-$dataPoints = array();
-//Best practice is to create a separate file for handling connection to database
-try{
-     // Creating a new connection.
-    // Replace your-hostname, your-db, your-username, your-password according to your database
-    $link = new \PDO(   'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4', //'mysql:host=localhost;dbname=canvasjs_db;charset=utf8mb4',
-                        'your-username', //'root',
-                        'your-password', //'',
-                        array(
-                            \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                            \PDO::ATTR_PERSISTENT => false
-                        )
-                    );
-	
-    $handle = $link->prepare('select x, y from datapoints'); 
-    $handle->execute(); 
-    $result = $handle->fetchAll(\PDO::FETCH_OBJ);
-		
-    foreach($result as $row){
-        array_push($dataPoints, array("x"=> $row->x, "y"=> $row->y));
-    }
-	$link = null;
-}
-catch(\PDOException $ex){
-    print($ex->getMessage());
-}
-	
-?>
-
-<!-- script php end -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,12 +18,7 @@ catch(\PDOException $ex){
 
     <!-- css end -->
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
   <body>
   <?php if(!empty($_GET["sError"])) { ?>
@@ -108,6 +70,7 @@ catch(\PDOException $ex){
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
+                            <h3>Economic Order Quantity</h3>
                         			<h3>Bullwhip Effect By Satrianansyah</h3>
                             		<p>Login To Application:</p>
                         		</div>

@@ -68,6 +68,17 @@ class pemesanan {
         return $pesananList;
     }
 
+    function PemesananCount ()
+		{
+			$query = "SELECT COUNT(p.id_pesanan) totpemesanan
+            FROM pemesanan p";
+			$prepareDB = $this->conn->prepare($query);
+			$prepareDB->execute();
+			$barangCount = $prepareDB->fetchAll();
+
+			return $barangCount;
+		}
+
     function PesananEditList() {
         try {
             $query = "UPDATE pemesanan
