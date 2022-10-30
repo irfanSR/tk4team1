@@ -6,6 +6,7 @@ include "../class/bagian.php";
 include "../class/pegawai.php";
 include "../class/pemesanan.php";
 include "../class/pengambilan.php";
+include "../class/produksi.php";
 
 
 // BarangTotalCount
@@ -35,9 +36,9 @@ $PengambilanList->PengambilanCount();
 $DaftarPengambilan = $PengambilanList->PengambilanCount();
 
 // Produksi Total count
-// $ProduksiList = new produksi($database);
-// $ProduksiList->ProduksiCount();
-// $DaftarProduksi = $ProduksiList->ProduksiCount();
+$ProduksiList = new produksi($database);
+$ProduksiList->ProduksiCount();
+$DaftarProduksi = $ProduksiList->ProduksiCount();
 
 ?>
 <!-- phpend -->
@@ -214,9 +215,9 @@ $DaftarPengambilan = $PengambilanList->PengambilanCount();
                     <h3 class="text-center">
                     <?php
 
-                    echo '(tempatproduksi)'
-                    // foreach ($DaftarPegawai as $key => $value);
-                    // echo $value['totpegawai'];
+                    // echo '(tempatproduksi)'
+                    foreach ($DaftarProduksi as $key => $value);
+                    echo $value['totproduksi'];
 
                     ?>
                     </h3>

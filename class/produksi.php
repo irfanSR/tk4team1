@@ -131,6 +131,15 @@ class produksi {
         return $daftarProduksi;
     }
 
+    function ProduksiCount() {
+        $query = "SELECT COUNT(p.id_produksi) totproduksi FROM produksi p";
+        $prepareDB = $this->conn->prepare($query);
+        $prepareDB->execute();
+        $lihatProduksi = $prepareDB->fetchAll();
+
+        return $lihatProduksi;
+    }
+
 }
 
 ?>
